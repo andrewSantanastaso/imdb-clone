@@ -1,5 +1,7 @@
 body {
   background-color: #ecf8f9;
+  background-image: url("src/assets/wp2700800.jpg");
+  background-clip: padding-box;
 }
 /* .home {
   display: flex;
@@ -152,7 +154,11 @@ hr {
 }
 
 .no-movies-container {
-  background-color: #7e1717;
+  background-color: #7e1717a7;
   height: 100vh;
   width: 90%;
+}
+
+.home-movies-default {
+  display: flex;
 }

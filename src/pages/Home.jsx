@@ -12,7 +12,12 @@ const Home = ({ searchMovies, searchTerm, setSearchTerm, movies }) => {
           setSearchTerm={setSearchTerm}
         />
         {movies.length === 0 ? (
-          <Hero />
+          <Hero
+            searchMovies={searchMovies}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            movies={movies}
+          />
         ) : (
           <div className="movie-list">
             {movies.map((movie) => (

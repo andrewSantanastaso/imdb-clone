@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import MovieDetail from "./pages/MovieDetail";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import Hero from "./components/Hero";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,12 +27,15 @@ function App() {
       <Route
         path="/"
         element={
-          <Home
-            searchMovies={searchMovies}
-            setTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            movies={movies}
-          />
+          <>
+            <Home
+              searchMovies={searchMovies}
+              setTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              movies={movies}
+              setMovies={setMovies}
+            />
+          </>
         }
       />
       <Route
