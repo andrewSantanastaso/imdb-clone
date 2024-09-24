@@ -1,40 +1,25 @@
-import { useState } from "react";
-import axios from "axios";
 import MovieCard from "../components/MovieCard";
+import Nav from "../components/Nav";
+import Hero from "../components/Hero";
 
-const Home = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [movies, setMovies] = useState([]);
-
-  const apiKey = "5b8cdfdd";
-
-  const searchMovies = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await axios.get(
-        `http://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}`
-      );
-      setMovies(response.data.Search || []);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
+const Home = ({ searchMovies, searchTerm, setSearchTerm, movies }) => {
   return (
-    <div className="home-container">
-      <form onSubmit={searchMovies}>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={(event) => setSearchTerm(event.target.value)}
-          placeholder="Search movies..."
+    <div className="home">
+      <div className="home-container">
+        <Nav
+          searchMovies={searchMovies}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
         />
-        <button type="submit">Search</button>
-      </form>
-      <div className="movie-list">
-        {movies.map((movie) => (
-          <MovieCard key={movie.imdbID} movie={movie} />
-        ))}
+        {movies.length === 0 ? (
+          <Hero />
+        ) : (
+          <div className="movie-list">
+            {movies.map((movie) => (
+              <MovieCard key={movie.imdbID} movie={movie} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

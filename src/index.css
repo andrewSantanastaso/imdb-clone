@@ -1,7 +1,39 @@
+body {
+  background-color: #ecf8f9;
+}
+/* .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
 .home-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.home-container input,
+.home-container button {
+  display: inline-block;
+  height: 30px;
+  width: 10vh;
+}
+
+button {
+  background-color: #e55807;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.home-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #068da9;
+  width: 100%;
+  height: 3em;
+  gap: 5px;
+  border: none;
 }
 .movie-list {
   display: grid;
@@ -37,17 +69,90 @@ form {
   max-width: 300px;
   border-radius: 10px;
   margin-bottom: 2rem;
+  box-shadow: 1px 1px 25px white;
 }
 
 .movie-detail h1 {
-  font-size: 2rem;
+  font-size: 75px;
   margin-bottom: 1rem;
+  font-style: italic;
 }
 
-.movie-detailp {
-  font-size: 1rem;
+.movie-detail p {
+  font-size: 30px;
   margin-bottom: 0.5rem;
 }
 
-body {
+.poster-thumbnail {
+  height: 20em;
+}
+
+.detail-container {
+  background-color: #068da9;
+  width: 50em;
+  margin: auto;
+  border: 20px solid #e55807;
+  border-radius: 20px;
+}
+
+hr {
+  width: 30%;
+  line-height: 1px;
+}
+
+.detail-textbox {
+  background-color: #7e1717;
+  padding: 15px;
+  color: rgb(236, 248, 249);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 15px;
+  box-shadow: 2px 0px 20px black;
+}
+.detail-textbox span {
+  background-color: #7e1717;
+  padding: 5px;
+  color: #ffff12;
+}
+
+.movie-card {
+  background-color: #e85d0db4;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  text-align: center;
+  width: 250px;
+  border-radius: 10px;
+}
+
+.movie-card,
+.movie-card h3 {
+  color: white;
+}
+
+.movie-card-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  color: rgb(236, 248, 249);
+}
+
+.no-movies {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 15px;
+  margin: 15px;
+  text-align: center;
+  color: #ecf8f9;
+}
+
+.no-movies-container {
+  background-color: #7e1717;
+  height: 100vh;
+  width: 90%;
 }
